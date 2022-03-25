@@ -2,15 +2,14 @@ import './App.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './components/NavBar';
-import LineIcon from "react-lineicons";
-
+import ItemListContainer from './components/ItemListContainer'
 
 
 function App() {
   return (
     <>
-      <NavBar></NavBar>
-      
+      <NavBar/>
+      <ItemListContainer props="Hola mundo"/>
     </>
 
   );

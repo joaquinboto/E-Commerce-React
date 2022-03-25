@@ -1,6 +1,4 @@
-
-
-
+import CartWidget from "./CartWidget";
 
 const navBar = () => {
 
@@ -23,9 +21,7 @@ const navBar = () => {
                 <li className="listadoItem">Contacto</li>
             </ul>
             </nav>
-            <span class="material-icons-outlined">
-            shopping_cart
-            </span>
+            <CartWidget></CartWidget>
           </div>
         </>
       );
