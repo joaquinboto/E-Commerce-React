@@ -6,8 +6,10 @@ const Container = ({props}) => {
     return (
 
         <>
-            <div>
-                <h1>{props}</h1>
+            <div className="container">
+                <div className="container__Titulo">
+                    <h1>{props}</h1>
+                </div>
             </div>        
         </>
 
