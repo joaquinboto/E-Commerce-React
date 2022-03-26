@@ -4,10 +4,6 @@ import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 
 
 
-const theme = {
-    color: 'primary'
-  };
-
 const CartWidget = () => {
 
     return (
