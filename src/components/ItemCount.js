@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 
 
-const ItemCount = ({stock},{initial}) => {
+const ItemCount = ({stock,initial}) => {
 
     const [iniciar , setInitial] = useState(0)
     const Aumentar = () => {
