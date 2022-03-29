@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <NavBar/>
-      <ItemListContainer props="Hola mundo"/>
+      <ItemListContainer props="Remera"/>
     </>
 
   );

@@ -12,9 +12,11 @@ const Container = ({props}) => {
             <div className="">
                 <div className="container__Titulo row">
                     <h1 className="">{props}</h1>
+                    <div>
+                        <ItemCount stock='5' initial='1' onAdd={add}/>   
+                    </div> 
                 </div>
             </div>
-            <ItemCount stock='5' initial='1' onAdd={add}/>    
         </>
 
     )
