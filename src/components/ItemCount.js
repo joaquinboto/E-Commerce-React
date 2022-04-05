@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 
 
-const ItemCount = ({stock,initial , onAdd , nameProducto}) => {
+const ItemCount = ({stock, onAdd }) => {
     const [cantidad , setInitial] = useState(0)
 
     const Aumentar = () => {
@@ -23,7 +23,7 @@ const ItemCount = ({stock,initial , onAdd , nameProducto}) => {
         <>
         <button className="btn btn-primary" onClick={Aumentar} >+</button>
         <span>{cantidad}</span>
-        <button className="btn btn-danger" onClick={Reducir}>-</button><button className="btn btn-primary" onClick={() => onAdd(cantidad , nameProducto)}>ADD TO CART</button> 
+        <button className="btn btn-danger" onClick={Reducir}>-</button><button className="btn btn-primary" onClick={() => onAdd(cantidad)}>ADD TO CART</button> 
         </>
 
 

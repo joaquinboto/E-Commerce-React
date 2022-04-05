@@ -65,3 +65,7 @@
 .container__Titulo {
   text-align: center;
 }
+
+.cardProducto {
+  width: 18rem;
+}
