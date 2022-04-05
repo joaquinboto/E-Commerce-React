@@ -5,7 +5,7 @@ export default function ItemList ({productos}) {
    
     return (
         <>
-        <div className="grilla">
+        <div className="grid-container">
             {productos.map(producto => <Item key={producto.id} {...producto}></Item>)}
             
         </div>

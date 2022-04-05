@@ -14,12 +14,12 @@ const Container = () => {
         autoplay: true,
         loop: true,
         style: {
-            width: '20%',
+            width: '10%',
         }
     }
     //CAMBIANDO ESTADO DE LOS PRODUCTOS
     const [producto , setProducto] = useState([])
-    const [load2 , setLoad] = useState(<div className="row d-flex justify-content-center"><Lottie {...load}/></div>)
+    const [load2 , setLoad] = useState(<div id="loading-container" className="row d-flex justify-content-center"><Lottie {...load}/></div>)
     //MONTANDO INFORMACION AL DOM DE LA PROMESA
     useEffect(() => {
 
