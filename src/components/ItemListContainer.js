@@ -4,7 +4,7 @@ import {autoFech} from '../products'
 import React, {useState , useEffect} from 'react'
 
 
-const Container = ({props}) => {
+const Container = () => {
 
     //CAMBIANDO ESTADO DE LOS PRODUCTOS
     const [producto , setProducto] = useState([])
