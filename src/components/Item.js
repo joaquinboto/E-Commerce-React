@@ -7,13 +7,13 @@ export default function Items ({imagen , nombre , precio , stock}) {
         <div className="cardProducto">
             <img className="card-img-top" src={imagen}>
             </img>
-            <div className="card-body">
+            <div className="cardBody">
                 <h5 className="card-title">
                     {nombre}
                 </h5>
                 <strong>Stock: {stock}</strong>
                 <p className="card-text">
-                    {precio}
+                    ${precio}
                 </p>
                 <ItemCount stock={stock}></ItemCount>
             </div>
