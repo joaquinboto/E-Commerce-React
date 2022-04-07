@@ -74,7 +74,6 @@ export const autoFech = () => {
     return new Promise ((resolve , rejects) => {
 
         setTimeout(() => {
-            <p>Cargando..</p>
             if (is_ok) {
                 resolve(products)
             } else {
