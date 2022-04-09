@@ -10,6 +10,7 @@ export const Container = styled.div`
     justify-content:center;
     align-items: center;
     margin: 50px auto;
+    flex-wrap: wrap;
 `
 
 export const ItemDetail = ({productos}) => {
