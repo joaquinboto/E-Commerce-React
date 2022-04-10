@@ -6,6 +6,7 @@ import {ItemDetail} from './ItemDetail'
 
 
 
+
 const ItemDetailContainer = () => {
 
     const [products , setProducts] = useState({})
@@ -23,6 +24,7 @@ const ItemDetailContainer = () => {
 
         <>
         <ItemDetail productos={products}></ItemDetail>
+        
         </>
 
 

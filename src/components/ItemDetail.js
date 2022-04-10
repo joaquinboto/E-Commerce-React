@@ -3,14 +3,20 @@ import styled from "styled-components"
 
 
 export const Container = styled.div`
-    height: 100%;
-    width: 60%;
-    position: relative;
-    display: flex;
-    justify-content:center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
     margin: 50px auto;
-    flex-wrap: wrap;
+    grid-row: 1/2;
+    grid-column: 1/2;
+`
+
+export const GridDetail = styled.div`
+    display: grid;
+    grid-auto-rows: minmax(120px , auto);
+    align-items: center;
+    justify-items: center;
+
 `
 
 export const ItemDetail = ({productos}) => {
@@ -25,7 +31,7 @@ export const ItemDetail = ({productos}) => {
             <img className="imgDetail" src={productos.imagen}>
             </img>
         </div>
-            <div className="dvDetail">
+            <GridDetail>
                 <div className="dvTitle">
                     <h5 className="titleDetail">
                         {productos.nombre}
@@ -43,7 +49,7 @@ export const ItemDetail = ({productos}) => {
                     </p>
                 </div>
             <ItemCount stock={productos.stock} initial='1' onAdd={add}/>
-            </div>
+            </GridDetail>
         </Container>
     )
 }

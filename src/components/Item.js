@@ -2,6 +2,12 @@ import ItemCount from "./ItemCount"
 
 export default function Items ({imagen , nombre , precio , stock}) {
 
+
+        //FUNCION ALERTA CANTIDAD DE PRODUCTOS AGREGADOS
+        const add = (cantidad ) => {
+            alert(`Agregaste ${cantidad} ${nombre} al carrito`)
+        }
+
     return (
 
         <div className="cardProducto">
@@ -15,7 +21,7 @@ export default function Items ({imagen , nombre , precio , stock}) {
                 <p className="card-text">
                     ${precio}
                 </p>
-                <ItemCount stock={stock}></ItemCount>
+                <ItemCount stock={stock} onAdd={add} ></ItemCount>
             </div>
         </div>
 
