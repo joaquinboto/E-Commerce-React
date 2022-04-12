@@ -1,6 +1,9 @@
 import CartWidget from "./CartWidget";
+import React, {useState} from "react"
 
-const navBar = () => {
+function NavBar () {
+
+    const [item , setItem] = useState()
 
     return (
         <>
@@ -29,4 +32,4 @@ const navBar = () => {
 
 
 
-export default navBar
+export default NavBar

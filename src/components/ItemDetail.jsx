@@ -25,6 +25,7 @@ export const ItemDetail = ({productos}) => {
         alert(`Agregaste ${cantidad} ${productos.nombre}s al carrito`)
     }
 
+    
     return (
         <Container>
         <div className="dvImagen">
