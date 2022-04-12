@@ -8,12 +8,12 @@ const CartWidget = () => {
 
     return (
 
-        <>
+        <div className="cartWidget">
             <Badge badgeContent={4} color="secondary">
             <PermIdentityIcon/>
             <ShoppingCartIcon />
             </Badge>
-        </>
+        </div>
 
     )
 

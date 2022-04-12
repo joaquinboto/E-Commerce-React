@@ -1,39 +1,36 @@
 import ItemList from './ItemList'
 import {autoFech} from '../products'
-import React, {useState , useEffect} from 'react'
-import ItemDetailContainer from './ItemDetailContainer'
-// import Lottie from "lottie-react";
-// import loading from '../assets/loading.json'
-
-
+import React, {useState , useEffect } from 'react'
+import {useParams} from 'react-router-dom'
+import {products} from '../products'
+import {SubMenu} from './SubMenu'
 
 const Container = () => {
     
-    // const load = {
-    //     animationData : loading,
-    //     autoplay: true,
-    //     loop: true,
-    //     style: {
-    //         width: '10%',
-    //     }
-    // }
+
     //CAMBIANDO ESTADO DE LOS PRODUCTOS
     const [producto , setProducto] = useState([])
-    // const [load2 , setLoad] = useState(<div id="loading-container" className="row d-flex justify-content-center"><Lottie {...load}/></div>)
-    //MONTANDO INFORMACION AL DOM DE LA PROMESA
+    const {idCategory} = useParams()
+    // MONTANDO INFORMACION AL DOM DE LA PROMESA
+    console.log(idCategory)
     useEffect(() => {
-
-        autoFech()
-        .then((result) => setProducto(result))
-        .catch((err) => console.error(err))
-    },[])
+        if (idCategory == undefined) {
+            autoFech(products)
+            .then((result) => setProducto(result))
+            .catch((err) => console.error(err))
+        }else {
+            autoFech(products.filter(producto => producto.categoria === idCategory))
+            .then((result) => setProducto(result))
+            .catch((err) => console.error(err))
+        }
+    },[idCategory])
 
 
     return (
         <>
+            <SubMenu/>
             <div className="mainContainer">
             <ItemList productos={producto}/>
-            <ItemDetailContainer></ItemDetailContainer>
             </div>
         </>
 

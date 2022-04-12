@@ -10,7 +10,7 @@ import {ItemDetail} from './ItemDetail'
 const ItemDetailContainer = () => {
 
     const [products , setProducts] = useState({})
-
+    
 
     useEffect(() => {
 
@@ -24,7 +24,6 @@ const ItemDetailContainer = () => {
 
         <>
         <ItemDetail productos={products}></ItemDetail>
-        
         </>
 
 

@@ -1,31 +1,47 @@
-import CartWidget from "./CartWidget";
-import React, {useState} from "react"
+import {Link} from 'react-router-dom'
+import React, {useState} from 'react'
+import CartWidget from './CartWidget'
 
 function NavBar () {
 
-    const [item , setItem] = useState()
+    const [click , setClick] = useState(false)
+
+    const handleClick = () => {
+      setClick(!click)
+    }
+
+    const closeMobileMenu = () => {
+      setClick(false)
+    }
 
     return (
         <>
-        <div className="divNav">
-            <h1 className="h1Logo">Logo</h1>
-            <nav className="navE">
-            <ul className="lista">
-                <li className="listadoItem">Inicio</li>
-                <li className="listadoItem">E-SHOP
-                <ul className="listaDrop">
-                <li className="listadoItem drop">Remeras</li>
-                <li className="listadoItem drop">Pantalones</li>
-                <li className="listadoItem drop">Camisas</li>
-                <li className="listadoItem drop">Buzos</li>
-                </ul>
+          <nav className="navbar">
+            <Link to="/" className="navbar-logo">E-SHOP</Link>
+            <div className="menu-icon" onClick={handleClick}>
+              <i className={click ? 'lni lni-close ' : 'lni lni-list'} id="iconMenu"></i>
+            </div>
+            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                
+                <li className='nav-item'>
+                    <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                      Home
+                    </Link>
                 </li>
-                <li className="listadoItem">Preguntas frecuentes</li>
-                <li className="listadoItem">Contacto</li>
+
+                <li className='nav-item'>
+                    <Link to="/Productos" className="nav-links" onClick={closeMobileMenu}>
+                      Productos<i class="lni lni-arrow-right-circle"></i>
+                    </Link>
+                </li>
+                <li className='nav-item'>
+                    <Link to="/Contact" className="nav-links" onClick={closeMobileMenu}>
+                      Contact
+                    </Link>
+                </li>
             </ul>
-            </nav>
-            <CartWidget></CartWidget>
-          </div>
+          <CartWidget></CartWidget>
+          </nav>
         </>
       );
 }
