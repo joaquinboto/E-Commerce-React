@@ -88,32 +88,32 @@ export const products = [
 export const subMenuItems = [
     {
         nombre: "Zapatillas",
-        path: "Zapatillas",
+        path: "Productos/Zapatillas",
         id: 1
     },
     {
         nombre: "Remeras",
-        path: "Remeras",
+        path: "Productos/Remeras",
         id: 1
     },
     {
         nombre: "Abrigos",
-        path: "Abrigos",
+        path: "Productos/Abrigos",
         id: 1
     },
     {
         nombre: "Accesorios",
-        path: "Accesorios",
+        path: "Productos/Accesorios",
         id: 1
     },
     {
         nombre: "Pantalones",
-        path: "Pantalones",
+        path: "Productos/Pantalones",
         id: 1
     },
     {
         nombre: "Conjuntos",
-        path: "Conjuntos",
+        path: "Productos/Conjuntos",
         id: 1
     },
 ]

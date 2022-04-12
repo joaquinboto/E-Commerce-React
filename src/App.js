@@ -14,6 +14,8 @@ function App() {
       <SubMenu/>
     <Routes>
         <Route path='/' element={<ItemListContainer/>} />
+        <Route path='/Productos' element={<ItemListContainer/>} />
+        <Route path='/Productos/:idCategory' element={<ItemListContainer/>} />
         <Route path=':idCategory' element={<ItemListContainer/>} />
     </Routes>
     </BrowserRouter>

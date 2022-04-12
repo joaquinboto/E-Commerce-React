@@ -3,7 +3,7 @@ import {autoFech} from '../products'
 import React, {useState , useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import {products} from '../products'
-import {SubMenu} from './SubMenu'
+
 
 const Container = () => {
     
@@ -12,7 +12,6 @@ const Container = () => {
     const [producto , setProducto] = useState([])
     const {idCategory} = useParams()
     // MONTANDO INFORMACION AL DOM DE LA PROMESA
-    console.log(idCategory)
     useEffect(() => {
         if (idCategory == undefined) {
             autoFech(products)
