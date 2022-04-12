@@ -7,7 +7,7 @@ export const products = [
         id : 1,
         categoria : "Conjuntos",
         stock: 5,
-        idCategoria: 5
+        idCategoria: "Destacado"
     },
     {
         nombre : "Zapatillas",
@@ -23,7 +23,7 @@ export const products = [
         imagen : "https://images.pexels.com/photos/7252051/pexels-photo-7252051.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         precio : "1200",
         id : 3,
-        categoria : "Saco",
+        categoria : "Abrigos",
         stock: 15,
         idCategoria: 1
     },
@@ -34,7 +34,7 @@ export const products = [
         id : 4,
         categoria : "Remeras",
         stock: 2,
-        idCategoria: 2
+        idCategoria: "Destacado"
     },
     {
         nombre : "Jean",
@@ -43,14 +43,14 @@ export const products = [
         id : 5,
         categoria : "Pantalones",
         stock: 3,
-        idCategoria: 10
+        idCategoria: "Destacado"
     },
     {
         nombre : "Campera",
         imagen : "https://images.pexels.com/photos/4922976/pexels-photo-4922976.jpeg?cs=srgb&dl=pexels-ekaterina-belinskaya-4922976.jpg&fm=jpg",
         precio : "3000",
         id : 6,
-        categoria : "Camperas",
+        categoria : "Abrigos",
         stock: 20,
         idCategoria: 20
 
@@ -69,11 +69,53 @@ export const products = [
         imagen : "https://images.pexels.com/photos/10032500/pexels-photo-10032500.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         precio : "14000",
         id : 8,
-        categoria : "Tapados",
+        categoria : "Abrigos",
         stock: 2,
+        idCategoria: "Destacado"
+    },
+    {
+        nombre : "Zapatillas",
+        imagen : "https://images.pexels.com/photos/1102777/pexels-photo-1102777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        precio : "1500",
+        id : 9,
+        categoria : "Zapatillas",
+        stock: 5,
         idCategoria: 8
     }
 
+]
+
+export const subMenuItems = [
+    {
+        nombre: "Zapatillas",
+        path: "Zapatillas",
+        id: 1
+    },
+    {
+        nombre: "Remeras",
+        path: "Remeras",
+        id: 1
+    },
+    {
+        nombre: "Abrigos",
+        path: "Abrigos",
+        id: 1
+    },
+    {
+        nombre: "Accesorios",
+        path: "Accesorios",
+        id: 1
+    },
+    {
+        nombre: "Pantalones",
+        path: "Pantalones",
+        id: 1
+    },
+    {
+        nombre: "Conjuntos",
+        path: "Conjuntos",
+        id: 1
+    },
 ]
 
 const is_ok = true

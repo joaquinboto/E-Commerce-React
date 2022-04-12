@@ -28,7 +28,6 @@ const Container = () => {
 
     return (
         <>
-            <SubMenu/>
             <div className="mainContainer">
             <ItemList productos={producto}/>
             </div>

@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import {products} from '../products'
+import {subMenuItems} from '../products'
 import styled from 'styled-components'
 
 export const ContainerSubmenu = styled.div`
@@ -19,12 +19,15 @@ export const SubMenu = () => {
 
     return(
         <ContainerSubmenu>
-            {products.map(product => {
+            {subMenuItems.map(product => {
+
                 return (
                     <BotonSubMenu key={product.id}>
-                        <Link className="nav-subMenu" to={product.categoria}>{product.categoria}</Link>
+                        <Link className="nav-subMenu" to={product.path}>{product.nombre}</Link>
                     </BotonSubMenu>
                 )
+                
+
             })}
         </ContainerSubmenu>
     )
