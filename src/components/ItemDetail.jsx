@@ -21,10 +21,7 @@ export const GridDetail = styled.div`
 
 export const ItemDetail = ({productos}) => {
 
-    const add = (cantidad ) => {
-        alert(`Agregaste ${cantidad} ${productos.nombre}s al carrito`)
-    }
-
+  
     
     return (
         <Container>
@@ -49,7 +46,7 @@ export const ItemDetail = ({productos}) => {
                     Material: Cuero
                     </p>
                 </div>
-            <ItemCount stock={productos.stock} initial='1' onAdd={add}/>
+            <ItemCount stock={productos.stock} initial='1'/>
             </GridDetail>
         </Container>
     )

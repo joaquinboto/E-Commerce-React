@@ -35,12 +35,12 @@ function NavBar () {
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to="/Contact" className="nav-links" onClick={closeMobileMenu}>
-                      Contact
+                    <Link to="/Cart" className="nav-links" onClick={closeMobileMenu}>
+                    <CartWidget></CartWidget>
                     </Link>
                 </li>
             </ul>
-          <CartWidget></CartWidget>
+          
           </nav>
         </>
       );

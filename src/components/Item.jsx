@@ -1,27 +1,30 @@
-import ItemCount from "./ItemCount"
 
-export default function Items ({imagen , nombre , precio , stock}) {
+import './Button.css'
+import {Link} from 'react-router-dom'
 
 
-        //FUNCION ALERTA CANTIDAD DE PRODUCTOS AGREGADOS
-        const add = (cantidad ) => {
-            alert(`Agregaste ${cantidad} ${nombre} al carrito`)
-        }
+
+export default function Items ({imagen , nombre , precio , id}) {
+
 
     return (
 
         <div className="cardProducto">
-            <img className="card-img-top" src={imagen}>
+            <img className="card-img-top" alt='imagenProducto' src={imagen}>
             </img>
             <div className="cardBody">
-                <h5 className="card-title">
+                <span className="card-title">
                     {nombre}
-                </h5>
-                <strong>Stock: {stock}</strong>
-                <p className="card-text">
-                    ${precio}
-                </p>
-                <ItemCount stock={stock} onAdd={add} ></ItemCount>
+                </span>
+                <strong className="card-text">
+                   Precio: ${precio}
+                </strong>
+                <button class="cta">
+                    <span class="hover-underline-animation"> <Link to={id}>Shop now </Link></span>
+                        <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                        <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                    </svg>
+                </button>
             </div>
         </div>
 
@@ -32,6 +35,8 @@ export default function Items ({imagen , nombre , precio , stock}) {
     )
 
 }
+
+
 
 
 
