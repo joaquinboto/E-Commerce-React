@@ -17,6 +17,19 @@
 
 .cardProducto {
   width: 13rem;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 7px;
+  padding: 5px;
+  transition: all 200ms;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+}
+
+.cardProducto:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.5)
 }
 
 .grid-container {
