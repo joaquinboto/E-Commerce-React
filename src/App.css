@@ -45,11 +45,14 @@
   align-items: center;
   margin: auto;
   padding: 5px;
+  
 }
 
 
 .imgDetail {
-  width: 70%
+  width: 300px;
+  height: 100%;
+  object-fit:cover;
 }
 
 .dvTitle {
@@ -172,4 +175,6 @@
     font-size: 1.8rem;
     cursor: pointer;
   }
+
+
 

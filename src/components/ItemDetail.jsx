@@ -3,20 +3,25 @@ import styled from "styled-components"
 
 
 export const Container = styled.div`
+    width: 70%;
+    max-width: 1100px;
+    height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: flex-start;
-    margin: 50px auto;
-    grid-row: 1/2;
-    grid-column: 1/2;
+    grid-template-columns: auto;
+    grid-auto-rows: minmax(100px, auto);
+    margin: 20px auto;
+    row-gap: 1em;
 `
 
-export const GridDetail = styled.div`
-    display: grid;
-    grid-auto-rows: minmax(120px , auto);
-    align-items: center;
-    justify-items: center;
-
+export const Row = styled.div`
+   width: 70%;
+   height: 100%;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   border: 1px solid black;
+   margin: auto;
 `
 
 export const ItemDetail = ({productos}) => {
@@ -25,29 +30,18 @@ export const ItemDetail = ({productos}) => {
     
     return (
         <Container>
-        <div className="dvImagen">
-            <img className="imgDetail" src={productos.imagen}>
-            </img>
-        </div>
-            <GridDetail>
-                <div className="dvTitle">
-                    <h5 className="titleDetail">
-                        {productos.nombre}
-                    </h5>
-                    <strong>Stock: {productos.stock}
-                            <h3>Precio:${productos.precio}</h3>
-                    </strong>
-                </div>
-                <div className="dvDescription">
-                    <p className="descriptionDetail">
-                    Campera Cuero Roll
-                    Campera de Cuero negro rígido con mangas y tejido rústico.
-                    Calce: Slim Fit
-                    Material: Cuero
-                    </p>
-                </div>
-            <ItemCount stock={productos.stock} initial='1'/>
-            </GridDetail>
+            <Row>
+            <img className="imgDetail" src={productos.imagen}></img>
+            </Row>
+            <Row>
+            <h1>{productos.nombre}</h1>
+            </Row>
+            <Row>
+            <h5>Precio: ${productos.precio}</h5>
+            </Row>
+            <Row>
+            <ItemCount></ItemCount>
+            </Row>
         </Container>
     )
 }

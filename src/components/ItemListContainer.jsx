@@ -28,9 +28,7 @@ const Container = () => {
 
     return (
         <>
-            <div className="mainContainer">
             <ItemList productos={producto}/>
-            </div>
         </>
 
     )

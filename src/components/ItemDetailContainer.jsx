@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
             autoFech(products)
-            .then((result) => setProducts(result[5]))
+            .then((result) => setProducts(result[0]))
             .catch((err) => console.error(err))
 } ,[])
     
