@@ -11,14 +11,15 @@ const Container = () => {
     //CAMBIANDO ESTADO DE LOS PRODUCTOS
     const [producto , setProducto] = useState([])
     const {idCategory} = useParams()
+
     // MONTANDO INFORMACION AL DOM DE LA PROMESA
     useEffect(() => {
-        if (idCategory == undefined) {
-            autoFech(products)
+        if (idCategory === undefined) {
+            autoFech(products.filter(product => product.idCategoria === 'Destacado'))
             .then((result) => setProducto(result))
             .catch((err) => console.error(err))
         }else {
-            autoFech(products.filter(producto => producto.categoria === idCategory))
+            autoFech(products.filter(product => product.path === idCategory))
             .then((result) => setProducto(result))
             .catch((err) => console.error(err))
         }

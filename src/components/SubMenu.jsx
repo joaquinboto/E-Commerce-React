@@ -26,9 +26,8 @@ export const SubMenu = () => {
                         <Link className="nav-subMenu" to={product.path}>{product.nombre}</Link>
                     </BotonSubMenu>
                 )
-                
-
             })}
+            <Link to='Productos'><button>Destacados</button></Link>
         </ContainerSubmenu>
     )
 
