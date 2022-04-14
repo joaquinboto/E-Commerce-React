@@ -14,7 +14,6 @@ export const BotonSubMenu = styled.button`
     appearance: none;
     background-color: transparent;
     border: 0.125em solid #1A1A1A;
-    border-radius: 0.9375em;
     box-sizing: border-box;
     color: #3B3B3B;
     cursor: pointer;
@@ -23,11 +22,11 @@ export const BotonSubMenu = styled.button`
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
-    margin: 0;
+    margin: 5px 0;
     min-height: 3rem;
     min-width: 0;
     outline: none;
-    padding: 5rem
+    padding: 7px;
     text-align: center;
     text-decoration: none;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
