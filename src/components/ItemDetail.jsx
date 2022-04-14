@@ -29,8 +29,8 @@ export const ItemDetail = ({productos}) => {
   
     
     return (
-        <Container>
-            <Row>
+        <Container >
+            <Row key={productos.id}>
             <img className="imgDetail" src={productos.imagen}></img>
             </Row>
             <Row>
