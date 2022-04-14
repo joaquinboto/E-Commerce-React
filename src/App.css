@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
 }
 
 
@@ -54,7 +55,7 @@
 .divCount {
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 100%;
   align-items: center;
   margin: auto;
   padding: 5px;
@@ -189,5 +190,24 @@
     cursor: pointer;
   }
 
+.titleDetail {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+}
 
+.navLinkDetail {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  padding: 5px;
+}
 
+.priceDetail {
+ font-size: 1.5em;
+ font-weight: bold;
+}
+
+.stockDetail {
+  font-size: 1em;
+  font-weight: bold;
+}

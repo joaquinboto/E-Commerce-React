@@ -158,7 +158,7 @@ export const autoFech = (products) => {
                 rejects('Error')
             }
 
-        }, 1000);
+        }, 0);
 
     })
 

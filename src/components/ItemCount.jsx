@@ -1,5 +1,5 @@
 import {useState} from 'react'
-
+import './Button.css'
 
 
 const ItemCount = ({stock}) => {
@@ -23,9 +23,17 @@ const ItemCount = ({stock}) => {
 
         <>
         <div className="divCount">
-            <button className="btn btn-primary" onClick={Aumentar} >+</button>
+            <div>
+                <a class="fancy" href="#">
+                <span class="top-key"></span>
+                <span class="text">Agregar al carrito</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+                </a>
+            </div>
+            <button id="bottone5" onClick={Aumentar} >+</button>
             <span>{cantidad}</span>
-            <button className="btn btn-danger" onClick={Reducir}>-</button>
+            <button id="bottone5" onClick={Reducir}>-</button>
         </div>
         </>
 

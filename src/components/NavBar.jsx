@@ -13,7 +13,7 @@ function NavBar () {
     const closeMobileMenu = () => {
       setClick(false)
     }
-
+    
     return (
         <>
           <nav className="navbar">
@@ -30,17 +30,17 @@ function NavBar () {
                 </li>
 
                 <li className='nav-item'>
-                    <Link to="/Productos" className="nav-links" onClick={closeMobileMenu}>
+                    <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                       Productos<i class="lni lni-arrow-right-circle"></i>
                     </Link>
                 </li>
+
                 <li className='nav-item'>
                     <Link to="/Cart" className="nav-links" onClick={closeMobileMenu}>
                     <CartWidget></CartWidget>
                     </Link>
                 </li>
             </ul>
-          
           </nav>
         </>
       );
