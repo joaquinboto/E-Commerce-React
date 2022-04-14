@@ -57,8 +57,7 @@
   justify-content: space-around;
   width: 100%;
   align-items: center;
-  margin: auto;
-  padding: 5px;
+  padding: 33px;
   
 }
 
@@ -211,4 +210,11 @@
 .stockDetail {
   font-size: 1em;
   font-weight: bold;
+}
+
+#options {
+  width: 150px;
+  padding: 5px;
+  margin: 5 auto;
+  height: 100%;
 }
