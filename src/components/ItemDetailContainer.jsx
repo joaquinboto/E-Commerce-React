@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
 
-            autoFech(products.find(product => product.id === ItemId))
+            autoFech(products.find(product => product.id === parseInt(ItemId)))
             .then((result) => setProducts(result))
             .catch((err) => console.error(err))
         
