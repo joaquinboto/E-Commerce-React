@@ -15,7 +15,7 @@ function App() {
       <SubMenu/>
     <Routes>
         <Route path='/' element={<ItemListContainer/>} />
-        <Route path='/Productos/:idCategory' element={<ItemListContainer/>} />
+        <Route path='/category/:idCategory' element={<ItemListContainer/>} />
         <Route path='/Item/:ItemId' element={<ItemDetailContainer/>} />
         <Route path=':idCategory' element={<ItemListContainer/>} />
     </Routes>

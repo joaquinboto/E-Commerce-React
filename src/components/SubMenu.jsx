@@ -67,7 +67,6 @@ export const SubMenu = () => {
                     </BotonSubMenu>
                 )
             })}
-            <Link to='Productos'><button>Destacados</button></Link>
         </ContainerSubmenu>
     )
 
