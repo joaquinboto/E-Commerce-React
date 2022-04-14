@@ -19,6 +19,7 @@ export const Row = styled.div`
    display:flex;
    align-items: center;
    justify-content: center;
+   flex-direction: column;
    flex-wrap: wrap;
    border: 1px solid black;
    margin: auto;
@@ -38,9 +39,10 @@ export const ItemDetail = ({productos}) => {
             </Row>
             <Row>
             <h5>Precio: ${productos.precio}</h5>
+            <h6>Stock:{productos.stock}</h6>
             </Row>
             <Row>
-            <ItemCount></ItemCount>
+            <ItemCount stock={productos.stock}></ItemCount>
             </Row>
         </Container>
     )
