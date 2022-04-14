@@ -9,7 +9,7 @@ export const Container = styled.div`
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(100px, 750px);
     margin: 20px auto;
 `
 
@@ -21,7 +21,6 @@ export const Row = styled.div`
    justify-content: center;
    flex-direction: column;
    flex-wrap: wrap;
-   border: 1px solid black;
    margin: auto;
    {}
 `
