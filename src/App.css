@@ -3,7 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto Slab', serif;
+  
 }
+
+
 
 
 
@@ -168,6 +171,10 @@
     color: black;
   }
 
+  .nav-subMenu:hover {
+    color: white;
+  }
+
   .nav-links:hover {
     background-color: #1888ff;
     border-radius: 0;
@@ -218,3 +225,4 @@
   margin: 5 auto;
   height: 100%;
 }
+

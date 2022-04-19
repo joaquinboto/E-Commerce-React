@@ -2,7 +2,7 @@ import {useState} from 'react'
 import './Button.css'
 
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock , onAdd }) => {
     const [cantidad , setInitial] = useState(0)
 
     const Aumentar = () => {
@@ -24,7 +24,7 @@ const ItemCount = ({stock}) => {
         <>
         <div className="divCount">
             <div>
-                <a class="fancy" href="#">
+                <a class="fancy" onClick={()=> onAdd(cantidad)} href="#">
                 <span class="top-key"></span>
                 <span class="text">Agregar al carrito</span>
                 <span class="bottom-key-1"></span>

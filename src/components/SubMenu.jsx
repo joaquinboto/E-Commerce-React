@@ -41,7 +41,7 @@ export const BotonSubMenu = styled.button`
    }
    
    &:hover {
-    color: #fff;
+    color: white;
     background-color: #1A1A1A;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
@@ -61,9 +61,9 @@ export const SubMenu = () => {
             {subMenuItems.map(product => {
 
                 return (
-                    <BotonSubMenu key={product.id}>
-                        <Link className="nav-subMenu" to={product.path}>{product.nombre}</Link>
-                    </BotonSubMenu>
+                    
+                        <Link key={product.id} className="nav-subMenu" to={product.path}><BotonSubMenu >{product.nombre}</BotonSubMenu></Link>
+                    
                 )
             })}
         </ContainerSubmenu>

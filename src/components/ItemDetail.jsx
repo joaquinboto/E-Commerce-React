@@ -1,6 +1,7 @@
 import ItemCount from "./ItemCount"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 
 export const Container = styled.div`
@@ -50,7 +51,12 @@ justify-content: space-evenly;
 
 export const ItemDetail = ({productos}) => {
 
-  
+    const [item , setItem] = useState(0)
+
+    const onAdd = (cantidad) => { 
+    alert(`Agregaste ${cantidad} ${productos.nombre} al carrito`)
+        setItem(cantidad)
+  }
     
     return (
         <Container >
@@ -98,7 +104,18 @@ export const ItemDetail = ({productos}) => {
                         </Tbody>
                     </Table>
                 </form>
-                    <ItemCount stock={productos.stock}></ItemCount>
+
+                    {item === 0 ? <ItemCount stock={productos.stock} onAdd={onAdd}></ItemCount> 
+                    : 
+                    <Link className="nav-subMenu" to="/Cart">
+                    <button class="cta">
+                        <span class="hover-underline-animation"> Shop now</span>
+                            <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                            <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                        </svg>
+                    </button>
+                    </Link>}
+                    
                 </Form>
             </div>
         </Container>
