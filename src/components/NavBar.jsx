@@ -17,7 +17,7 @@ function NavBar () {
     return (
         <>
           <nav className="navbar">
-            <Link to="/" className="navbar-logo">E-SHOP</Link>
+            <Link to="/" className="navbar-logo">E-SHOP <i class="lni lni-atlassian"></i></Link>
             <div className="menu-icon" onClick={handleClick}>
               <i className={click ? 'lni lni-close ' : 'lni lni-list'} id="iconMenu"></i>
             </div>
