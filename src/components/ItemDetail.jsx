@@ -1,8 +1,91 @@
 import ItemCount from "./ItemCount"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { CardContext } from "./CardContext"
 
+
+export const ItemDetail = ({productos}) => {
+
+    const [item , setItem] = useState(0)
+
+    const test = useContext(CardContext)
+    
+   
+    const onAdd = (cantidad) => { 
+    alert(`Agregaste ${cantidad} ${productos.nombre} al carrito`)
+    setItem(cantidad)
+    test.addToCart(productos)
+    }
+
+
+
+    
+    
+
+    return (
+        <Container >
+            <Row key={productos.id}>
+            <img className="imgDetail" alt="imagenProduct" src={productos.imagen}></img>
+            </Row>
+            <div>
+                <nav><Link className="navLinkDetail" to="/">Inicio</Link><span> / </span><Link className="navLinkDetail" to={`/category/${productos.path}`}>{productos.path}</Link></nav>
+                <Form>
+                <h1 className="titleDetail" >{productos.nombre}</h1>
+                <p className="priceDetail">Precio: ${productos.precio}</p>
+                <p className="stockDetail">Stock: {productos.stock}</p>
+                <div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, est, perferendis porro enim error dolore quis quae voluptates dignissimos voluptate tenetur officia maiores cupiditate eveniet natus repudiandae sit illum adipisci.</p>
+                </div>
+                <form action="">
+                    <Table>
+                        <Tbody>
+                            <th>
+                               <label htmlFor="">Colores:</label>
+                            </th>
+                            <td>
+                                <select name="" id="options">
+                                    <option value="">Elije tu color</option>
+                                    <option value="">Rojo</option>
+                                    <option value="">Azul</option>
+                                    <option value="">Verde</option>
+                                    <option value="">Amarillo</option>
+                                </select>
+                            </td>
+                        </Tbody>
+                        <Tbody>
+                            <th>
+                                <label htmlFor="">Tallas:</label>
+                            </th>
+                            <td>
+                                <select name="" id="options">
+                                    <option value="">Elije tu talla</option>
+                                    <option value="">S</option>
+                                    <option value="">M</option>
+                                    <option value="">L</option>
+                                    <option value="">XL</option>
+                                </select>
+                            </td>
+                        </Tbody>
+                    </Table>
+                </form>
+
+                    {item === 0 ? <ItemCount stock={productos.stock} onAdd={onAdd}></ItemCount> 
+                    : 
+                    <Link className="nav-subMenu" to="/Cart">
+                    <button class="cta">
+                        <span class="hover-underline-animation"> Shop now</span>
+                            <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                            <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                        </svg>
+                    </button>
+                    </Link>}
+                    
+                </Form>
+            </div>
+        </Container>
+    )
+}
 
 export const Container = styled.div`
     width: 70%;
@@ -48,76 +131,3 @@ flex-direction: column;
 align-items: flex-start;
 justify-content: space-evenly;
 `
-
-export const ItemDetail = ({productos}) => {
-
-    const [item , setItem] = useState(0)
-
-    const onAdd = (cantidad) => { 
-    alert(`Agregaste ${cantidad} ${productos.nombre} al carrito`)
-        setItem(cantidad)
-  }
-    
-    return (
-        <Container >
-            <Row key={productos.id}>
-            <img className="imgDetail" alt="imagenProduct" src={productos.imagen}></img>
-            </Row>
-            <div>
-                <nav><Link className="navLinkDetail" to="/">Inicio</Link><span> / </span><Link className="navLinkDetail" to={`/category/${productos.path}`}>{productos.path}</Link></nav>
-                <Form>
-                <h1 className="titleDetail" >{productos.nombre}</h1>
-                <p className="priceDetail">Precio: ${productos.precio}</p>
-                <p className="stockDetail">Stock: {productos.stock}</p>
-                <div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, est, perferendis porro enim error dolore quis quae voluptates dignissimos voluptate tenetur officia maiores cupiditate eveniet natus repudiandae sit illum adipisci.</p>
-                </div>
-                <form action="">
-                    <Table>
-                        <Tbody>
-                            <th>
-                               <label htmlFor="">Colores</label>
-                            </th>
-                            <td>
-                                <select name="" id="options">
-                                    <option value="">Elije tu color</option>
-                                    <option value="">Rojo</option>
-                                    <option value="">Azul</option>
-                                    <option value="">Verde</option>
-                                    <option value="">Amarillo</option>
-                                </select>
-                            </td>
-                        </Tbody>
-                        <Tbody>
-                            <th>
-                                <label htmlFor="">Tallas</label>
-                            </th>
-                            <td>
-                                <select name="" id="options">
-                                    <option value="">Elije tu talla</option>
-                                    <option value="">S</option>
-                                    <option value="">M</option>
-                                    <option value="">L</option>
-                                    <option value="">XL</option>
-                                </select>
-                            </td>
-                        </Tbody>
-                    </Table>
-                </form>
-
-                    {item === 0 ? <ItemCount stock={productos.stock} onAdd={onAdd}></ItemCount> 
-                    : 
-                    <Link className="nav-subMenu" to="/Cart">
-                    <button class="cta">
-                        <span class="hover-underline-animation"> Shop now</span>
-                            <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
-                            <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
-                        </svg>
-                    </button>
-                    </Link>}
-                    
-                </Form>
-            </div>
-        </Container>
-    )
-}

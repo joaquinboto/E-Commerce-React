@@ -37,7 +37,7 @@ function NavBar () {
 
                 <li className='nav-item'>
                     <Link to="/Cart" className="nav-links" onClick={closeMobileMenu}>
-                    <CartWidget></CartWidget>
+                      <CartWidget></CartWidget>
                     </Link>
                 </li>
             </ul>

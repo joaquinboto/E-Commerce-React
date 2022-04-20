@@ -1,8 +1,9 @@
 import ItemList from './ItemList'
 import {autoFech} from '../products'
-import React, {useState , useEffect } from 'react'
+import React, {useState , useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import {products} from '../products'
+
 
 
 const Container = () => {
@@ -24,7 +25,6 @@ const Container = () => {
             .catch((err) => console.error(err))
         }
     },[idCategory])
-
 
     return (
         <>

@@ -2,6 +2,26 @@ import {Link} from 'react-router-dom'
 import {subMenuItems} from '../products'
 import styled from 'styled-components'
 
+
+export const SubMenu = () => {
+    
+    
+    return(
+        <ContainerSubmenu>
+            {subMenuItems.map(product => {
+                
+                return (
+                    
+                    <Link key={product.id} className="nav-subMenu" to={product.path}><BotonSubMenu >{product.nombre}</BotonSubMenu></Link>
+                    
+                    )
+                })}
+        </ContainerSubmenu>
+    )
+
+
+    
+}
 export const ContainerSubmenu = styled.div`
     display: flex;
     justify-content: space-around;
@@ -52,23 +72,3 @@ export const BotonSubMenu = styled.button`
     transform: translateY(0);
    } 
 `
-
-export const SubMenu = () => {
-
-
-    return(
-        <ContainerSubmenu>
-            {subMenuItems.map(product => {
-
-                return (
-                    
-                        <Link key={product.id} className="nav-subMenu" to={product.path}><BotonSubMenu >{product.nombre}</BotonSubMenu></Link>
-                    
-                )
-            })}
-        </ContainerSubmenu>
-    )
-
-
-
-}
