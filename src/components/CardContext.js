@@ -38,9 +38,14 @@ const CardContextProvider = ({children}) => {
         return badge
     }
 
+    //ACTUALIZANDO TOTAL EN EL CARRITO
+    const updateTotal = () => {
+        let total = cart.reduce((acumulador , producto) => acumulador + (producto.precio * producto.cantidad) , 0)
+        return total
+    }
 
     return (
-        <CardContext.Provider value={{cart , addToCart , deleteProduct , deleteOneProduct , updateBadge}}>
+        <CardContext.Provider value={{cart , addToCart , deleteProduct , deleteOneProduct , updateBadge , updateTotal}}>
             {children}
         </CardContext.Provider>
     )

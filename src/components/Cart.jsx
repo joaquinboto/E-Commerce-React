@@ -38,7 +38,7 @@ const Cart = () => {
                                     </>)})}
 
                                     {test.cart.length === 0 ? <><h6>Carrito Vacio</h6></> : <><button onClick={() => test.deleteProduct}>Vaciar Carrito</button></>}
-                                    <tr>Total :</tr>
+                                    <tr>Total {test.updateTotal()} :</tr>
                         </tbody>
                     </Tabla>
                </form>
