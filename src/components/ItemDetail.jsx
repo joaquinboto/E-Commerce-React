@@ -15,7 +15,7 @@ export const ItemDetail = ({productos}) => {
     const onAdd = (cantidad) => { 
     alert(`Agregaste ${cantidad} ${productos.nombre} al carrito`)
     setItem(cantidad)
-    test.addToCart(productos)
+    test.addToCart(productos , cantidad)
     }
 
 

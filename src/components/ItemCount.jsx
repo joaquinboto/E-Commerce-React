@@ -1,9 +1,12 @@
-import {useState} from 'react'
+import {useState } from 'react'
 import '../Button.css'
+
 
 
 const ItemCount = ({stock , onAdd }) => {
     const [cantidad , setInitial] = useState(0)
+
+   
 
     const Aumentar = () => {
 
@@ -26,7 +29,7 @@ const ItemCount = ({stock , onAdd }) => {
 
             {cantidad > 0  
             ?
-            <button class="fancy" onClick={()=> onAdd(cantidad)} >
+            <button class="fancy" onClick={()=> onAdd(cantidad) } >
             <span class="top-key"></span>
             <span class="text">Agregar al carrito</span>
             <span class="bottom-key-1"></span>
@@ -35,7 +38,7 @@ const ItemCount = ({stock , onAdd }) => {
             : 
             <button class="fancy" onClick={()=> onAdd(cantidad)} disabled>
                     <span class="top-key"></span>
-                    <span class="text">Agregar al carrito</span>
+                    <span class="text">Agregar la cantidad deseada</span>
                     <span class="bottom-key-1"></span>
                     <span class="bottom-key-2"></span>
                 </button>
