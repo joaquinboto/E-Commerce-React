@@ -27,7 +27,7 @@ const Cart = () => {
                             {test.cart.map(product => {
                                 return(
                                     <>
-                                    <tr>
+                                    <tr key={product.id}>
                                     <Td><ImgCart src={product.imagen} alt="imagenProducto" width="100px" height="100px"/>
                                         {product.nombre}</Td>
                                     <Td>{product.precio}</Td>

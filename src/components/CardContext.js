@@ -28,7 +28,7 @@ const CardContextProvider = ({children}) => {
 
     //Elminando un producto del carrito
     const deleteOneProduct = (id) => {
-        let deleteOneProduct = cart.filter(producto => producto.id !== id )
+        let deleteOneProduct = cart.filter(producto => producto.id != id )
         setCart(deleteOneProduct)
     }
 
