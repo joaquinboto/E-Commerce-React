@@ -26,7 +26,6 @@ const Cart = () => {
                         <tbody>
                             {test.cart.map(product => {
                                 return(
-                                    
                                     <>
                                     <tr>
                                     <Td><ImgCart src={product.imagen} alt="imagenProducto" width="100px" height="100px"/>
@@ -36,17 +35,14 @@ const Cart = () => {
                                     <Td>{product.precio}</Td>
                                     <Td><button onClick={() => test.deleteOneProduct(product.id)}>Eliminar Producto</button></Td>
                                     </tr>
-                                    </>
-)
-})}
-                                   {test.cart.length === 0 ? <><h6>Carrito Vacio</h6></> : <><button onClick={() => test.deleteProduct}>Vaciar Carrito</button></>}
-                                    <tr>Total : {test.totalProducts} </tr>
+                                    </>)})}
+
+                                    {test.cart.length === 0 ? <><h6>Carrito Vacio</h6></> : <><button onClick={() => test.deleteProduct}>Vaciar Carrito</button></>}
+                                    <tr>Total :</tr>
                         </tbody>
                     </Tabla>
                </form>
             </RowCart>
-
-
             <RowCart>
 
             </RowCart>

@@ -28,22 +28,19 @@ const CardContextProvider = ({children}) => {
 
     //Elminando un producto del carrito
     const deleteOneProduct = (id) => {
-        let deleteOneProduct = cart.filter(producto => producto.id !== id)
+        let deleteOneProduct = cart.filter(producto => producto.id !== id )
         setCart(deleteOneProduct)
     }
 
-    //Sumando total de productos
-    const totalProducts = () => {
-
-        let total = cart.reduce((acum , producto) => {
-            return acum + (producto.precio * producto.cantidad),0
-        })
-     
+    //ACTUALIZANDO BADGE EN EL CARRITO
+    const updateBadge = () => {
+        let badge = cart.reduce((acumulador , producto) => acumulador + producto.cantidad , 0)
+        return badge
     }
 
 
     return (
-        <CardContext.Provider value={{cart , addToCart , deleteProduct , deleteOneProduct , totalProducts}}>
+        <CardContext.Provider value={{cart , addToCart , deleteProduct , deleteOneProduct , updateBadge}}>
             {children}
         </CardContext.Provider>
     )
