@@ -44,8 +44,14 @@ const CardContextProvider = ({children}) => {
         return total
     }
 
+    //Sumando subtotales de cada producto
+    const updateSubtotal = (id) => {
+        let subtotal = cart.map(producto => producto.precio * producto.cantidad)
+        return subtotal
+    }
+
     return (
-        <CardContext.Provider value={{cart , addToCart , deleteProduct , deleteOneProduct , updateBadge , updateTotal}}>
+        <CardContext.Provider value={{cart , addToCart , deleteProduct , deleteOneProduct , updateBadge , updateTotal , updateSubtotal}}>
             {children}
         </CardContext.Provider>
     )

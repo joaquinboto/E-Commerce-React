@@ -32,13 +32,13 @@ const Cart = () => {
                                         {product.nombre}</Td>
                                     <Td>{product.precio}</Td>
                                     <Td>{product.cantidad}</Td>
-                                    <Td>{product.precio}</Td>
+                                    <Td>{test.updateSubtotal(product.id)}</Td>
                                     <Td><button onClick={() => test.deleteOneProduct(product.id)}>Eliminar Producto</button></Td>
                                     </tr>
                                     </>)})}
 
                                     {test.cart.length === 0 ? <><h6>Carrito Vacio</h6></> : <><button onClick={() => test.deleteProduct}>Vaciar Carrito</button></>}
-                                    <tr>Total {test.updateTotal()} :</tr>
+                                    <tr>Total: $ {test.updateTotal()} </tr>
                         </tbody>
                     </Tabla>
                </form>
