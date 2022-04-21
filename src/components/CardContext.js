@@ -26,7 +26,7 @@ const CardContextProvider = ({children}) => {
         setCart([])
     }
 
-    //Elminando un producto del carrito
+    //Elminando UN producto del carrito
     const deleteOneProduct = (id) => {
         let deleteOneProduct = cart.filter(producto => producto.id != id )
         setCart(deleteOneProduct)
@@ -49,6 +49,7 @@ const CardContextProvider = ({children}) => {
         let subtotal = cart.map(producto => producto.precio * producto.cantidad)
         return subtotal
     }
+
 
     return (
         <CardContext.Provider value={{cart , addToCart , deleteProduct , deleteOneProduct , updateBadge , updateTotal , updateSubtotal}}>

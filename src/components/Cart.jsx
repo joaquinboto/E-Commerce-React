@@ -20,7 +20,7 @@ const Cart = () => {
                                 <Td>Producto</Td>
                                 <Td>Precio</Td>
                                 <Td>Cantidad</Td>
-                                <Td>Total</Td>
+                                <Td>Subtotal</Td>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,7 +32,7 @@ const Cart = () => {
                                         {product.nombre}</Td>
                                     <Td>{product.precio}</Td>
                                     <Td>{product.cantidad}</Td>
-                                    <Td>{test.updateSubtotal(product.id)}</Td>
+                                    <Td>{test.updateSubtotal()}</Td>
                                     <Td><button onClick={() => test.deleteOneProduct(product.id)}>Eliminar Producto</button></Td>
                                     </tr>
                                     </>)})}
