@@ -31,15 +31,16 @@ const Cart = () => {
                                         {product.nombre}</Td>
                                     <Td>{product.precio}</Td>
                                     <Td>
-                                    <button id="bottone5" onClick={(e) => { 
-                                        e.preventDefault()
-                                        test.reduceProduct(product.id)
-                                    }}>-</button>
-                                    {product.cantidad}
                                     <button id="bottone5" onClick={(e) => {
                                         e.preventDefault()
                                         test.increaseProduct(product.id)
                                     } }>+</button>
+                                    {product.cantidad}
+                                    <button id="bottone5" onClick={(e) => { 
+                                        e.preventDefault()
+                                        test.reduceProduct(product.id)
+                                    }}>-</button>
+                                    
                                     </Td>
                                     <Td >{test.updateSubtotal(product.id)}</Td>
                                     <Td><button onClick={() => test.deleteOneProduct(product.id)}>Eliminar Producto</button></Td>

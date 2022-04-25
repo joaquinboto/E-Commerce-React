@@ -51,16 +51,18 @@ const CardContextProvider = ({children}) => {
         return cart[index].precio * cart[index].cantidad
     }
 
+    //ACTUALIZANDO LA CANTIDAD DE PRODUCTOS
     const reduceProduct = (id) => {
         let index = cart.map(producto => producto.id).indexOf(id)
         if (cart[index].cantidad > 1) {
             cart[index].cantidad -= 1
             setCart([...cart])
         } else {
-            setCart([])
+            deleteOneProduct(id)
         }
     }
 
+    //ACTUALIZANDO LA CANTIDAD DE PRODUCTOS
     const increaseProduct = (id) => {
         let index = cart.map(producto => producto.id).indexOf(id)
         cart[index].cantidad += 1
