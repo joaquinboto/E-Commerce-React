@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Cart from "./Cart";
 
 export const CardContext = createContext();
 
@@ -78,12 +79,11 @@ const CardContextProvider = ({children}) => {
             return ( 
                 <>
                 <tr>Envio: $1000</tr>
-                <tr>Precio con envio: {totalConEnvio + 2000}</tr>
+                {productos.length > 0 ? <tr>Precio con envio: {totalConEnvio + 2000}</tr> : null}
                 </>
             )
         } else {
             return (
-            
             <tr>ENVIO GRATIS!</tr>)
         }
 
