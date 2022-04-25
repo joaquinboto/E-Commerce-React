@@ -19,7 +19,7 @@ function NavBar () {
           <nav className="navbar">
             <Link to="/" className="navbar-logo">E-SHOP <i class="lni lni-atlassian"></i></Link>
             <div className="menu-icon" onClick={handleClick}>
-              <i className={click ? 'lni lni-close ' : 'lni lni-list'} id="iconMenu"></i>
+              <i style={{color: "white"}} className={click ? 'lni lni-close ' : 'lni lni-list'} id="iconMenu"></i>
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 

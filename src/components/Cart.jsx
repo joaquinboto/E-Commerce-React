@@ -1,7 +1,7 @@
 import { CardContext } from "./CardContext"
 import {useContext} from 'react';
 import  styled  from 'styled-components';
-
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const Cart = () => {
     
@@ -43,7 +43,7 @@ const Cart = () => {
                                     
                                     </Td>
                                     <Td >{test.updateSubtotal(product.id)}</Td>
-                                    <Td><button onClick={() => test.deleteOneProduct(product.id)}>Eliminar Producto</button></Td>
+                                    <Td><DeleteIcon style={{cursor: "pointer"}} onClick={() => test.deleteOneProduct(product.id)}></DeleteIcon></Td>
                                     </tr>
 )})}
                                     <tr>{test.productos.length === 0 ? <p>Carrito Vacio</p> : <button onClick={() => test.deleteProduct}>Vaciar Carrito</button>}</tr>
