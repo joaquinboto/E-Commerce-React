@@ -4,7 +4,7 @@ export const products = [
         nombre : "Conjunto",
         imagen : "https://images.pexels.com/photos/6900594/pexels-photo-6900594.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         precio : "5000",
-        id : 1,
+        id : 5,
         path : "Conjuntos",
         stock: 5,
         idCategoria: "Destacado"
@@ -40,7 +40,7 @@ export const products = [
         nombre : "Jean",
         imagen : "https://images.pexels.com/photos/4173695/pexels-photo-4173695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         precio : "300",
-        id : 5,
+        id : 1,
         path : "Pantalones",
         stock: 3,
         idCategoria: "Destacado"

@@ -40,9 +40,9 @@ export const ItemDetail = ({productos}) => {
                 <form action="">
                     <Table>
                         <Tbody>
-                            <th>
+                            <td>
                                <label htmlFor="">Colores:</label>
-                            </th>
+                            </td>
                             <td>
                                 <select name="" id="options">
                                     <option value="">Elije tu color</option>
@@ -54,9 +54,9 @@ export const ItemDetail = ({productos}) => {
                             </td>
                         </Tbody>
                         <Tbody>
-                            <th>
+                            <td>
                                 <label htmlFor="">Tallas:</label>
-                            </th>
+                            </td>
                             <td>
                                 <select name="" id="options">
                                     <option value="">Elije tu talla</option>

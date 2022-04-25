@@ -26,26 +26,36 @@ const Cart = () => {
                         <tbody>
                             {test.cart.map(product => {
                                 return(
-                                    <>
                                     <tr key={product.id}>
                                     <Td><ImgCart src={product.imagen} alt="imagenProducto" width="100px" height="100px"/>
                                         {product.nombre}</Td>
                                     <Td>{product.precio}</Td>
-                                    <Td>{product.cantidad}</Td>
-                                    <Td>{test.updateSubtotal()}</Td>
+                                    <Td>
+                                    <button id="bottone5" onClick={(e) => { 
+                                        e.preventDefault()
+                                        test.reduceProduct(product.id)
+                                    }}>-</button>
+                                    {product.cantidad}
+                                    <button id="bottone5" onClick={(e) => {
+                                        e.preventDefault()
+                                        test.increaseProduct(product.id)
+                                    } }>+</button>
+                                    </Td>
+                                    <Td >{test.updateSubtotal(product.id)}</Td>
                                     <Td><button onClick={() => test.deleteOneProduct(product.id)}>Eliminar Producto</button></Td>
                                     </tr>
-                                    </>)})}
-
-                                    {test.cart.length === 0 ? <><h6>Carrito Vacio</h6></> : <><button onClick={() => test.deleteProduct}>Vaciar Carrito</button></>}
+)})}
+                                    <tr>{test.cart.length === 0 ? <p>Carrito Vacio</p> : <button onClick={() => test.deleteProduct}>Vaciar Carrito</button>}</tr>
                                     <tr>Total: $ {test.updateTotal()} </tr>
+
                         </tbody>
                     </Tabla>
                </form>
             </RowCart>
             <RowCart>
-
+                {test.cart.length >= 1 ? <button>Terminar compra</button> : null}
             </RowCart>
+
         </ContainerCart>
 
 )
@@ -75,13 +85,13 @@ export const RowCart = styled.div`
 `
 
 export const Tabla = styled.table`
-    border: 1px solid #000;
+    border: 4px solid #ebebeb;
     width: 100%;
+    padding: 10px;
 `
 
 export const Td = styled.td`
-
-    border: 1px solid #000;
+    border: 4px solid #ebebeb;
     padding: 10px;
 `
 
