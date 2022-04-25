@@ -68,7 +68,7 @@ const Cart = () => {
                             <tr>{test.productos.length >= 1 ? <button>Terminar compra</button> : null}</tr>
                         </tbody>
                     </table>
-                    <p className="promotion">*Envio gratis a partir de $5000</p>
+                    <p className="promotion">*Envio gratis a partir de $6000</p>
                 </form>
                 </div>
             </RowCart>
