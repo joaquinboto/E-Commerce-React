@@ -53,7 +53,21 @@ const Cart = () => {
                </form>
             </RowCart>
             <RowCart>
-                {test.cart.length >= 1 ? <button>Terminar compra</button> : null}
+                <div>
+                <form action="">
+                    <table>
+                        <thead>
+                            <th>
+                                Resumen de la compra
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr>Total del pedido:{test.updateTotal()}</tr>
+                            <tr>{test.cart.length >= 1 ? <button>Terminar compra</button> : null}</tr>
+                        </tbody>
+                    </table>
+                </form>
+                </div>
             </RowCart>
 
         </ContainerCart>
