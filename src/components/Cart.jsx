@@ -24,7 +24,7 @@ const Cart = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {test.cart.map(product => {
+                            {test.productos.map(product => {
                                 return(
                                     <tr key={product.id}>
                                     <Td><ImgCart src={product.imagen} alt="imagenProducto" width="100px" height="100px"/>
@@ -46,7 +46,7 @@ const Cart = () => {
                                     <Td><button onClick={() => test.deleteOneProduct(product.id)}>Eliminar Producto</button></Td>
                                     </tr>
 )})}
-                                    <tr>{test.cart.length === 0 ? <p>Carrito Vacio</p> : <button onClick={() => test.deleteProduct}>Vaciar Carrito</button>}</tr>
+                                    <tr>{test.productos.length === 0 ? <p>Carrito Vacio</p> : <button onClick={() => test.deleteProduct}>Vaciar Carrito</button>}</tr>
                                     <tr>Total: $ {test.updateTotal()} </tr>
 
                         </tbody>
@@ -63,8 +63,10 @@ const Cart = () => {
                             </th>
                         </thead>
                         <tbody>
+                            <tr>Envio: $500</tr>
+                            <tr>{test.calcEnvio()}</tr>
                             <tr>Total del pedido:{test.updateTotal()}</tr>
-                            <tr>{test.cart.length >= 1 ? <button>Terminar compra</button> : null}</tr>
+                            <tr>{test.productos.length >= 1 ? <button>Terminar compra</button> : null}</tr>
                         </tbody>
                     </table>
                 </form>
