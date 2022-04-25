@@ -63,12 +63,12 @@ const Cart = () => {
                             </th>
                         </thead>
                         <tbody>
-                            <tr>Envio: $1000</tr>
                             <tr>{test.calcEnvio()}</tr>
                             <tr>Total del pedido: ${test.updateTotal()}</tr>
                             <tr>{test.productos.length >= 1 ? <button>Terminar compra</button> : null}</tr>
                         </tbody>
                     </table>
+                    <p className="promotion">*Envio gratis a partir de $5000</p>
                 </form>
                 </div>
             </RowCart>

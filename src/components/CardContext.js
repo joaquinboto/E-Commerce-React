@@ -75,9 +75,16 @@ const CardContextProvider = ({children}) => {
         let totalConEnvio = updateTotal() - 1000
 
         if (totalConEnvio < 5000) {
-            return ( <tr>Precio con envio: {totalConEnvio + 2000}</tr> )
+            return ( 
+                <>
+                <tr>Envio: $1000</tr>
+                <tr>Precio con envio: {totalConEnvio + 2000}</tr>
+                </>
+            )
         } else {
-            return (<tr>Bonificacion costo de envio: -$1000</tr>)
+            return (
+            
+            <tr>ENVIO GRATIS!</tr>)
         }
 
     }
