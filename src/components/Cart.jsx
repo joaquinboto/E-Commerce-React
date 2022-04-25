@@ -63,9 +63,9 @@ const Cart = () => {
                             </th>
                         </thead>
                         <tbody>
-                            <tr>Envio: $500</tr>
+                            <tr>Envio: $1000</tr>
                             <tr>{test.calcEnvio()}</tr>
-                            <tr>Total del pedido:{test.updateTotal()}</tr>
+                            <tr>Total del pedido: ${test.updateTotal()}</tr>
                             <tr>{test.productos.length >= 1 ? <button>Terminar compra</button> : null}</tr>
                         </tbody>
                     </table>
