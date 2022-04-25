@@ -17,8 +17,8 @@ const CardContextProvider = ({children}) => {
             nombre: item.nombre,
             precio: item.precio,
             cantidad: cantidad,
+            stock: item.stock
         }]) : duplicado.cantidad += cantidad
-
     }
 
     //ELIMINANDO TODOS LOS PRODUCTOS DEL CARRITO
@@ -47,7 +47,6 @@ const CardContextProvider = ({children}) => {
     //Sumando subtotales de cada producto
     const updateSubtotal = (id) => {
         const index = cart.map(producto => producto.id).indexOf(id)
-        console.log(id)
         return cart[index].precio * cart[index].cantidad
     }
 
@@ -64,9 +63,12 @@ const CardContextProvider = ({children}) => {
 
     //ACTUALIZANDO LA CANTIDAD DE PRODUCTOS
     const increaseProduct = (id) => {
+        let stock = cart.map(producto => producto.stock)
         let index = cart.map(producto => producto.id).indexOf(id)
-        cart[index].cantidad += 1
-        setCart([...cart])
+        if (cart[index].cantidad < stock[index]) {
+            cart[index].cantidad += 1
+            setCart([...cart])
+        }
     }
 
 
