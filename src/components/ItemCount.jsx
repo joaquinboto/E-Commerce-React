@@ -29,18 +29,18 @@ const ItemCount = ({stock , onAdd }) => {
 
             {cantidad > 0  
             ?
-            <button class="fancy" onClick={()=> onAdd(cantidad) } >
-            <span class="top-key"></span>
-            <span class="text">Agregar al carrito</span>
-            <span class="bottom-key-1"></span>
-            <span class="bottom-key-2"></span>
+            <button className="fancy" onClick={()=> onAdd(cantidad) } >
+            <span className="top-key"></span>
+            <span className="text">Agregar al carrito</span>
+            <span className="bottom-key-1"></span>
+            <span className="bottom-key-2"></span>
             </button> 
             : 
-            <button class="fancy" onClick={()=> onAdd(cantidad)} disabled>
-                    <span class="top-key"></span>
-                    <span class="text">Agregar la cantidad deseada</span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
+            <button className="fancy" onClick={()=> onAdd(cantidad)} disabled>
+                    <span className="top-key"></span>
+                    <span className="text">Agregar la cantidad deseada</span>
+                    <span className="bottom-key-1"></span>
+                    <span className="bottom-key-2"></span>
                 </button>
             }
                 

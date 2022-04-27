@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import Cart from "./Cart";
+
 
 export const CardContext = createContext();
 
@@ -72,6 +72,7 @@ const CardContextProvider = ({children}) => {
         }
     }
 
+    //CALCULANDO ENVIO
     const calcEnvio = () => {
         let totalConEnvio = updateTotal() - 1000
 

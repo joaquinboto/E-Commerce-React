@@ -16,7 +16,7 @@ export const products = [
         id : 2,
         path : "Zapatillas",
         stock: 10,
-        idCategoria: 5
+
     },
     {
         nombre : "Saco",
@@ -25,7 +25,7 @@ export const products = [
         id : 3,
         path : "Abrigos",
         stock: 15,
-        idCategoria: 1
+
     },
     {
         nombre : "Remera",
@@ -52,7 +52,7 @@ export const products = [
         id : 6,
         path : "Abrigos",
         stock: 20,
-        idCategoria: 20
+
 
     },
     {
@@ -62,7 +62,7 @@ export const products = [
         id : 7,
         path : "Accesorios",
         stock: 12,
-        idCategoria: 50
+
     },
     {
         nombre : "Tapado",
@@ -80,7 +80,6 @@ export const products = [
         id : 9,
         path : "Zapatillas",
         stock: 5,
-        idCategoria: 8
     },
     {   
         nombre: "Remera Negra",
@@ -89,7 +88,6 @@ export const products = [
         id:11,
         stock: 5,
         path: "Remeras",
-        idCategoria: ""
     },
     {   
         nombre: "Remera Amarilla",
@@ -98,7 +96,6 @@ export const products = [
         id:12,
         stock: 5,
         path: "Remeras",
-        idCategoria: ""
     },
     {   
         nombre: "Remera Verde",
@@ -107,7 +104,6 @@ export const products = [
         id:13,
         stock: 5,
         path: "Remeras",
-        idCategoria: ""
     },
 
 ]
@@ -121,27 +117,27 @@ export const subMenuItems = [
     {
         nombre: "Remeras",
         path: "category/Remeras",
-        id: 1
+        id: 2
     },
     {
         nombre: "Abrigos",
         path: "category/Abrigos",
-        id: 1
+        id: 3
     },
     {
         nombre: "Accesorios",
         path: "category/Accesorios",
-        id: 1
+        id: 4
     },
     {
         nombre: "Pantalones",
         path: "category/Pantalones",
-        id: 1
+        id: 5
     },
     {
         nombre: "Conjuntos",
         path: "category/Conjuntos",
-        id: 1
+        id: 6
     },
 ]
 

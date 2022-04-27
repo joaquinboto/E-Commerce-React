@@ -26,6 +26,8 @@ const Container = () => {
         }
     },[idCategory])
 
+
+
     return (
         <>
             <ItemList productos={producto}/>

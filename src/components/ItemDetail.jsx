@@ -40,32 +40,36 @@ export const ItemDetail = ({productos}) => {
                 <form action="">
                     <Table>
                         <Tbody>
-                            <td>
-                               <label htmlFor="">Colores:</label>
-                            </td>
-                            <td>
-                                <select name="" id="options">
-                                    <option value="">Elije tu color</option>
-                                    <option value="">Rojo</option>
-                                    <option value="">Azul</option>
-                                    <option value="">Verde</option>
-                                    <option value="">Amarillo</option>
-                                </select>
-                            </td>
+                            <tr>
+                                <td>
+                                   <label htmlFor="">Colores:</label>
+                                </td>
+                                <td>
+                                    <select name="" id="options">
+                                        <option value="">Elije tu color</option>
+                                        <option value="">Rojo</option>
+                                        <option value="">Azul</option>
+                                        <option value="">Verde</option>
+                                        <option value="">Amarillo</option>
+                                    </select>
+                                </td>
+                            </tr>
                         </Tbody>
                         <Tbody>
-                            <td>
-                                <label htmlFor="">Tallas:</label>
-                            </td>
-                            <td>
-                                <select name="" id="options">
-                                    <option value="">Elije tu talla</option>
-                                    <option value="">S</option>
-                                    <option value="">M</option>
-                                    <option value="">L</option>
-                                    <option value="">XL</option>
-                                </select>
-                            </td>
+                            <tr>
+                                <td>
+                                    <label htmlFor="">Tallas:</label>
+                                </td>
+                                <td>
+                                    <select name="" id="options">
+                                        <option value="">Elije tu talla</option>
+                                        <option value="">S</option>
+                                        <option value="">M</option>
+                                        <option value="">L</option>
+                                        <option value="">XL</option>
+                                    </select>
+                                </td>
+                            </tr>
                         </Tbody>
                     </Table>
                 </form>
@@ -73,8 +77,8 @@ export const ItemDetail = ({productos}) => {
                     {item === 0 ? <ItemCount stock={productos.stock} onAdd={onAdd}></ItemCount> 
                     : 
                     <Link className="nav-subMenu" to="/Cart">
-                    <button class="cta">
-                        <span class="hover-underline-animation"> Shop now</span>
+                    <button className="cta">
+                        <span className="hover-underline-animation"> Shop now</span>
                             <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
                             <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
                         </svg>

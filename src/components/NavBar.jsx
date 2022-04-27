@@ -17,7 +17,7 @@ function NavBar () {
     return (
         <>
           <nav className="navbar">
-            <Link to="/" className="navbar-logo">E-SHOP <i class="lni lni-atlassian"></i></Link>
+            <Link to="/" className="navbar-logo">E-SHOP <i className="lni lni-atlassian"></i></Link>
             <div className="menu-icon" onClick={handleClick}>
               <i style={{color: "white"}} className={click ? 'lni lni-close ' : 'lni lni-list'} id="iconMenu"></i>
             </div>
@@ -31,7 +31,7 @@ function NavBar () {
 
                 <li className='nav-item'>
                     <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                      Productos<i class="lni lni-arrow-right-circle"></i>
+                      Productos<i className="lni lni-arrow-right-circle"></i>
                     </Link>
                 </li>
 
