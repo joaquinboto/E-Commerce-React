@@ -66,7 +66,7 @@ const CardContextProvider = ({children}) => {
     const increaseProduct = (id) => {
         let stock = productos.map(product => product.stock)
         let index = productos.map(product => product.id).indexOf(id)
-        if (productos[index].cantidad < stock[index]) {
+        if (productos[index].cantidad < stock[index] ) {
             productos[index].cantidad += 1
             setProductos([...productos])
         }

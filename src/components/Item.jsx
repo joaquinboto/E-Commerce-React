@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 
 
-export default function Items ({imagen , nombre , precio , id}) {
+export default function Items ({imagen , nombre , precio , id , path}) {
 
 
     return (

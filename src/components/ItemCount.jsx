@@ -1,3 +1,4 @@
+
 import {useState } from 'react'
 import '../Button.css'
 
@@ -10,7 +11,7 @@ const ItemCount = ({stock , onAdd }) => {
 
     const Aumentar = () => {
 
-        if (cantidad < stock) {
+        if (cantidad < stock ) {
         setInitial(cantidad + 1)
     }
 }

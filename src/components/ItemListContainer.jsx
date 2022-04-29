@@ -1,8 +1,8 @@
 import ItemList from './ItemList'
-import {autoFech} from '../products'
 import React, {useState , useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import {products} from '../products'
+import db from '../firebaseConfig';
+import { collection, query, getDocs, where, orderBy} from "firebase/firestore";
 
 
 
@@ -15,18 +15,35 @@ const Container = () => {
 
     // MONTANDO INFORMACION AL DOM DE LA PROMESA
     useEffect(() => {
-        if (idCategory === undefined) {
-            autoFech(products.filter(product => product.idCategoria === 'Destacado'))
-            .then((result) => setProducto(result))
-            .catch((err) => console.error(err))
-        }else {
-            autoFech(products.filter(product => product.path === idCategory))
-            .then((result) => setProducto(result))
-            .catch((err) => console.error(err))
+        
+        const dataFirestore = async (idCategory) => {
+            let q;
+        
+            if (idCategory) {
+                q = query(collection(db, "products"), where("path", "==", idCategory));
+            }
+             else {
+                q = query(collection(db, "products"),orderBy("idCategoria" , "desc"));
+            }
+        
+            const querySnapshot = await getDocs(q);
+            let dataFrom = querySnapshot.docs.map(doc => (
+                {
+                id: doc.id,
+                ...doc.data()
+                }
+            ));
+            
+            return dataFrom;
         }
+
+        dataFirestore(idCategory)
+        .then(data => setProducto(data))
+
+
     },[idCategory])
 
-
+    
 
     return (
         <>
