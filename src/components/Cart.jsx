@@ -47,7 +47,7 @@ const Cart = () => {
     .then(result => alert(`orden ${result.id}  creada , gracias ${order.buyer.name}`))
 
 
-    
+    test.deleteProduct()
 }
 
 
