@@ -2,12 +2,55 @@ import { CardContext } from "./CardContext"
 import {useContext} from 'react';
 import  styled  from 'styled-components';
 import DeleteIcon from '@material-ui/icons/Delete';
+import {collection, serverTimestamp , setDoc , doc, updateDoc, increment} from 'firebase/firestore'
+import db from '../firebaseConfig';
+
 
 const Cart = () => {
     
     const test = useContext(CardContext);
-    console.log(); 
+
+    const createOrder = () => { 
+        
+        const itemsCopy = test.productos.map(producto => ({
+
+            id: producto.id,
+            title: producto.nombre,
+            price: producto.precio,
+            quantity: producto.cantidad,}))
+        
+        let order = {
+            buyer :{
+                name: "Messi",
+                phone: 1235123,
+                email: "joaquin.boto@hotmail.com",},
+            date: serverTimestamp(),
+            item: itemsCopy,
+            total: test.updateTotal()
+    }
     
+    
+    test.productos.forEach(async (item) => {
+        const itemRef = doc(db, "products", item.id);
+        await updateDoc(itemRef, {
+          stock: increment(-item.cantidad)
+        });
+      });
+
+    const createOrderInFirestore = async () => {
+        const or = doc(collection(db, "orders"));
+        await setDoc(or, order);
+        return or;
+      }
+
+    createOrderInFirestore()
+    .then(result => alert(`orden ${result.id}  creada , gracias ${order.buyer.name}`))
+
+
+    
+}
+
+
     return(
 
         <ContainerCart>
@@ -46,8 +89,8 @@ const Cart = () => {
                                     <Td><DeleteIcon style={{cursor: "pointer"}} onClick={() => test.deleteOneProduct(product.id)}></DeleteIcon></Td>
                                     </tr>
 )})}
-                                    <tr>{test.productos.length === 0 ? <p>Carrito Vacio</p> : <button onClick={() => test.deleteProduct}>Vaciar Carrito</button>}</tr>
-                                    <tr>Total: $ {test.updateTotal()} </tr>
+                                    <tr><td>{test.productos.length === 0 ? <p>Carrito Vacio</p> : <button onClick={() => test.deleteProduct}>Vaciar Carrito</button>}</td></tr>
+                                    <tr><span>Total: $ {test.updateTotal()} </span></tr>
 
                         </tbody>
                     </Tabla>
@@ -58,19 +101,20 @@ const Cart = () => {
                 <form action="">
                     <table>
                         <thead>
-                            <th>
+                            <tr>
                                 Resumen de la compra
-                            </th>
+                            </tr>
                         </thead>
                         <tbody>
                             <tr>{test.calcEnvio()}</tr>
                             <tr>Total del pedido: ${test.updateTotal()}</tr>
-                            <tr>{test.productos.length >= 1 ? <button>Terminar compra</button> : null}</tr>
                         </tbody>
                     </table>
                     <p className="promotion">*Envio gratis a partir de $6000</p>
                 </form>
+                {test.productos.length >= 1 ? <button onClick={createOrder}>Terminar compra</button> : null}
                 </div>
+                
             </RowCart>
 
         </ContainerCart>

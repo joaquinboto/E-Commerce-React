@@ -55,7 +55,6 @@ export const BotonSubMenu = styled.button`
     touch-action: manipulation;
     will-change: transform;
    
-   
    &:disabled {
     pointer-events: none;
    }
