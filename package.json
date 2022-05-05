@@ -1,4 +1,5 @@
 {
+  "homepage": "https://joaquinboto.github.io/E-Commerce-React/",
   "name": "proyecto-react",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +15,7 @@
     "bootstrap": "^5.1.3",
     "firebase": "^9.6.11",
     "framer-motion": "6.3.0",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-lineicons": "^3.0.0",
@@ -25,6 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

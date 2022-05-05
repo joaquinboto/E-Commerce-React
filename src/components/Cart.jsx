@@ -90,7 +90,7 @@ const Cart = () => {
                                     </tr>
 )})}
                                     <tr><td>{test.productos.length === 0 ? <p>Carrito Vacio</p> : <button onClick={() => test.deleteProduct}>Vaciar Carrito</button>}</td></tr>
-                                    <tr><span>Total: $ {test.updateTotal()} </span></tr>
+                                    <tr><td><span>Total: $ {test.updateTotal()} </span></td></tr>
 
                         </tbody>
                     </Tabla>
