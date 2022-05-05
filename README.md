@@ -6,14 +6,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Tienda online de Ropa.
 
-##Funcionalidades
+## Funcionalidades
 
 - Menú con las secciones shop y carrito.
 - Dentro de shop listado de todos los items destacados disponibles, se puede elegir por categorias, mostrando sus detalles.
 - Dentro del carrito listado de todos los productos y el total de la compra.
 - Dentro del checkout feedback de la compra realizada mostrando el código de orden de la compra.
 
-##Tecnologías usadas en el proyecto:
+## Tecnologías usadas en el proyecto:
 
 - React: Version “^18.0.0”
 - @material-ui/core: Version “^4.12.3”.
