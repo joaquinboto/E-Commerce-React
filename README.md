@@ -15,12 +15,12 @@ Tienda online de Ropa.
 
 ##Tecnologías usadas en el proyecto:
 
-React: Version “^18.0.0”
-@material-ui/core: Version “^4.12.3”.
-LineIcons: "react-lineicons": "^3.0.0",
-StyleComponents: "5.2.3"
-Firebase: Version “^9.6.11”
-FramerMotion: "framer-motion": "6.3.0"
+●React: Version “^18.0.0”
+●@material-ui/core: Version “^4.12.3”.
+●LineIcons: "react-lineicons": "^3.0.0",
+●StyleComponents: "5.2.3"
+●Firebase: Version “^9.6.11”
+●FramerMotion: "framer-motion": "6.3.0"
 
 ## Authors
 
