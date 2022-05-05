@@ -8,19 +8,21 @@ Tienda online de Ropa.
 
 ##Funcionalidades
 
--Menú con las secciones shop y carrito.
--Dentro de shop listado de todos los items destacados disponibles, se puede elegir por categorias, mostrando sus detalles.
--Dentro del carrito listado de todos los productos y el total de la compra.
--Dentro del checkout feedback de la compra realizada mostrando el código de orden de la compra.
+- Menú con las secciones shop y carrito.
+- Dentro de shop listado de todos los items destacados disponibles, se puede elegir por categorias, mostrando sus detalles.
+- Dentro del carrito listado de todos los productos y el total de la compra.
+- Dentro del checkout feedback de la compra realizada mostrando el código de orden de la compra.
 
 ##Tecnologías usadas en el proyecto:
 
--React: Version “^18.0.0”
--@material-ui/core: Version “^4.12.3”.
--LineIcons: "react-lineicons": "^3.0.0",
--StyleComponents: "5.2.3"
--Firebase: Version “^9.6.11”
--FramerMotion: "framer-motion": "6.3.0"
+- React: Version “^18.0.0”
+- @material-ui/core: Version “^4.12.3”.
+- LineIcons: "react-lineicons": "^3.0.0",
+- StyleComponents: "5.2.3"
+- Firebase: Version “^9.6.11”
+- FramerMotion: "framer-motion": "6.3.0"
+
+
 
 ## Authors
 
