@@ -1,5 +1,5 @@
 import { CardContext } from "./CardContext"
-import {useContext} from 'react';
+import {useContext , useState} from 'react';
 import  styled  from 'styled-components';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {collection, serverTimestamp , setDoc , doc, updateDoc, increment} from 'firebase/firestore'
@@ -9,6 +9,9 @@ import db from '../firebaseConfig';
 const Cart = () => {
     
     const test = useContext(CardContext);
+    const [input , setInput] = useState('');
+    const [phone , setPhone] = useState('');
+    const [email , setEmail] = useState('');
 
     const createOrder = () => { 
         
@@ -21,7 +24,7 @@ const Cart = () => {
         
         let order = {
             buyer :{
-                name: "Messi",
+                name: input,
                 phone: 1235123,
                 email: "joaquin.boto@hotmail.com",},
             date: serverTimestamp(),
@@ -44,7 +47,7 @@ const Cart = () => {
       }
 
     createOrderInFirestore()
-    .then(result => alert(`orden ${result.id}  creada , gracias ${order.buyer.name}`))
+    .then(result => alert(`orden ${result.id}  creada , gracias ${order.buyer.name} , te estaremos contactando al numero ${order.buyer.phone}`))
 
 
     test.deleteProduct()
@@ -99,11 +102,36 @@ const Cart = () => {
             <RowCart>
                 <div>
                 <form action="">
+                    
                     <table>
                         <thead>
                             <tr>
                                 Resumen de la compra
                             </tr>
+                            <label htmlFor="">
+                            Nombre:
+                             <input type="text" onChange={(e) => {
+                            
+                            setInput(e.target.value)
+                            }} value={input} />
+                            </label>
+                            <hr />
+                            <label htmlFor="">
+                            Telefono:
+                            <input type="text" onChange={(e) => {
+                            
+                            setPhone(e.target.value)
+                            }} value={phone} />
+                            </label>
+                            <hr />
+                            <label htmlFor="">
+                            Email:
+                            <input type="text" onChange={(e) => {
+                            
+                            setEmail(e.target.value)
+                            }} value={email} />
+                            </label>
+
                         </thead>
                         <tbody>
                             <tr>{test.calcEnvio()}</tr>
@@ -118,7 +146,7 @@ const Cart = () => {
             </RowCart>
 
         </ContainerCart>
-
+    
 )
 
 }
