@@ -8,14 +8,23 @@ import { CardContext } from "./CardContext"
 export const ItemDetail = ({productos}) => {
 
     const [item , setItem] = useState(0)
-
+    const [color , setColor] = useState('')
+    const [talla, setTalla] = useState('')
     const test = useContext(CardContext)
     
-   
+    
+
     const onAdd = (cantidad) => { 
-    alert(`Agregaste ${cantidad} ${productos.nombre} al carrito`)
-    setItem(cantidad)
-    test.addToCart(productos , cantidad)
+
+        if (color === '' && talla === '') {
+            alert ('Seleccione una talla y un color')
+        } else {    
+            alert(`Agregaste ${cantidad} ${productos.nombre} al carrito`)
+            setItem(cantidad)
+            test.addToCart(productos , cantidad , color , talla)
+        }
+
+  
     }
 
 
@@ -45,12 +54,12 @@ export const ItemDetail = ({productos}) => {
                                    <label htmlFor="">Colores:</label>
                                 </td>
                                 <td>
-                                    <select name="" id="options">
+                                    <select name="" id="options" onChange={(e) => setColor(e.target.value)}>
                                         <option value="">Elije tu color</option>
-                                        <option value="">Rojo</option>
-                                        <option value="">Azul</option>
-                                        <option value="">Verde</option>
-                                        <option value="">Amarillo</option>
+                                        <option value="Rojo">Rojo</option>
+                                        <option value="Azul">Azul</option>
+                                        <option value="Verde">Verde</option>
+                                        <option value="Amarillo">Amarillo</option>
                                     </select>
                                 </td>
                             </tr>
@@ -61,12 +70,12 @@ export const ItemDetail = ({productos}) => {
                                     <label htmlFor="">Tallas:</label>
                                 </td>
                                 <td>
-                                    <select name="" id="options">
+                                    <select name="" id="options" onChange={(e) => setTalla(e.target.value)}>
                                         <option value="">Elije tu talla</option>
-                                        <option value="">S</option>
-                                        <option value="">M</option>
-                                        <option value="">L</option>
-                                        <option value="">XL</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
                                     </select>
                                 </td>
                             </tr>

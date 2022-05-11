@@ -49,7 +49,9 @@ const Cart = () => {
     createOrderInFirestore()
     .then(result => alert(`orden ${result.id}  creada , gracias ${order.buyer.name} , te estaremos contactando al numero ${order.buyer.phone}`))
 
-
+    setEmail('')
+    setPhone('')
+    setInput('')
     test.deleteProduct()
 }
 
@@ -76,6 +78,10 @@ const Cart = () => {
                                     <Td><ImgCart src={product.imagen} alt="imagenProducto" width="100px" height="100px"/>
                                         {product.nombre}</Td>
                                     <Td>{product.precio}</Td>
+                                    <Td><span>Color:</span> {product.color}
+                                        <br/>
+                                        <span>Talla:</span> {product.talla}
+                                    </Td>
                                     <Td>
                                     <button id="bottone5" onClick={(e) => {
                                         e.preventDefault()
@@ -99,6 +105,8 @@ const Cart = () => {
                     </Tabla>
                </form>
             </RowCart>
+
+
             <RowCart>
                 <div>
                 <form action="">
@@ -118,7 +126,7 @@ const Cart = () => {
                             <hr />
                             <label htmlFor="">
                             Telefono:
-                            <input type="text" onChange={(e) => {
+                            <input type="number" onChange={(e) => {
                             
                             setPhone(e.target.value)
                             }} value={phone} />

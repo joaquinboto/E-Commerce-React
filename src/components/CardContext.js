@@ -9,7 +9,7 @@ const CardContextProvider = ({children}) => {
     const [productos , setProductos ] = useState([]);
 
     //AÑADIENDO PRODUCTOS AL CARRITO
-    const addToCart = (item , cantidad) => {
+    const addToCart = (item , cantidad , color , talla) => {
         //Sumando la cantidad de productos que se van a agregar al carrito
         let duplicado = productos.find(producto => producto.id === item.id)
         duplicado === undefined ?  setProductos([...productos , {
@@ -18,7 +18,9 @@ const CardContextProvider = ({children}) => {
             nombre: item.nombre,
             precio: item.precio,
             cantidad: cantidad,
-            stock: item.stock
+            stock: item.stock,
+            color: color,
+            talla: talla
         }]) : duplicado.cantidad += cantidad
     }
 
