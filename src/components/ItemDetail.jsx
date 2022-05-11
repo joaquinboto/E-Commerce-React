@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { useState, useContext } from "react"
 import { CardContext } from "./CardContext"
-
+import swal from "sweetalert";
 
 export const ItemDetail = ({productos}) => {
 
@@ -16,10 +16,15 @@ export const ItemDetail = ({productos}) => {
 
     const onAdd = (cantidad) => { 
 
-        if (color === '' && talla === '') {
-            alert ('Seleccione una talla y un color')
-        } else {    
-            alert(`Agregaste ${cantidad} ${productos.nombre} al carrito`)
+        if (color === '' || talla === '') {
+            swal({
+                title: 'Agregue una talla y un color',
+                icon: 'warning',
+                buttons: 'Ok',
+                dangerMode: true,
+                
+            })
+        } else { 
             setItem(cantidad)
             test.addToCart(productos , cantidad , color , talla)
         }

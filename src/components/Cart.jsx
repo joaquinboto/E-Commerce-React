@@ -4,7 +4,7 @@ import  styled  from 'styled-components';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {collection, serverTimestamp , setDoc , doc, updateDoc, increment} from 'firebase/firestore'
 import db from '../firebaseConfig';
-
+import swal from "sweetalert";
 
 const Cart = () => {
     
@@ -25,8 +25,8 @@ const Cart = () => {
         let order = {
             buyer :{
                 name: input,
-                phone: 1235123,
-                email: "joaquin.boto@hotmail.com",},
+                phone: phone,
+                email: email,},
             date: serverTimestamp(),
             item: itemsCopy,
             total: test.updateTotal()
@@ -47,7 +47,7 @@ const Cart = () => {
       }
 
     createOrderInFirestore()
-    .then(result => alert(`orden ${result.id}  creada , gracias ${order.buyer.name} , te estaremos contactando al numero ${order.buyer.phone}`))
+    .then(result => swal(`orden ${result.id}  creada , gracias ${order.buyer.name} , te estaremos contactando al numero ${order.buyer.phone} o al email: ${order.buyer.email}`))
 
     setEmail('')
     setPhone('')
@@ -76,12 +76,15 @@ const Cart = () => {
                                 return(
                                     <tr key={product.id}>
                                     <Td><ImgCart src={product.imagen} alt="imagenProducto" width="100px" height="100px"/>
-                                        {product.nombre}</Td>
-                                    <Td>{product.precio}</Td>
-                                    <Td><span>Color:</span> {product.color}
+                                        <br />
+                                        <span>Nombre:</span>{product.nombre}
+                                        <br />
+                                        <span>Color:</span> {product.color}
                                         <br/>
-                                        <span>Talla:</span> {product.talla}
-                                    </Td>
+                                        <span>Talle:</span> {product.talla}
+                                        </Td>
+                                    <Td>{product.precio}</Td>
+                                    
                                     <Td>
                                     <button id="bottone5" onClick={(e) => {
                                         e.preventDefault()
@@ -98,7 +101,22 @@ const Cart = () => {
                                     <Td><DeleteIcon style={{cursor: "pointer"}} onClick={() => test.deleteOneProduct(product.id)}></DeleteIcon></Td>
                                     </tr>
 )})}
-                                    <tr><td>{test.productos.length === 0 ? <p>Carrito Vacio</p> : <button onClick={() => test.deleteProduct}>Vaciar Carrito</button>}</td></tr>
+                                    <tr><td>{test.productos.length === 0 ? <p>Carrito Vacio</p> : <button onClick={(e) =>{
+                                        e.preventDefault()
+                                        swal({
+                                            title: "¿Estas seguro de eliminar todos los productos?",
+                                            buttons: ["No", "Si"],
+                                            icon: "warning",
+                                            dangerMode: true,
+                                        })
+                                        .then(respuesta =>{
+                                            if (respuesta){
+                                                test.deleteProduct()
+                                            } else {
+                                                return
+                                            }
+                                        })
+                                    }}>Vaciar Carrito</button>}</td></tr>
                                     <tr><td><span>Total: $ {test.updateTotal()} </span></td></tr>
 
                         </tbody>
