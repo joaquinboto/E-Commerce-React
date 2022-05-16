@@ -166,7 +166,7 @@ const Cart = () => {
                     </table>
                     <p className="promotion">*Envio gratis a partir de $6000</p>
                 </form>
-                {test.productos.length >= 1 ? <button onClick={createOrder}>Terminar compra</button> : null}
+                {email == '' || phone == '' || input == '' ? <button disabled>Terminar compra</button> : <button onClick={() => createOrder()}>Terminar compra</button>}
                 </div>
                 
             </RowCart>

@@ -32,11 +32,6 @@ export const ItemDetail = ({productos}) => {
   
     }
 
-
-
-    
-    
-
     return (
         <Container >
             <Row key={productos.id}>
