@@ -107,7 +107,7 @@ const Cart = () => {
                                     <Td><DeleteIcon style={{cursor: "pointer"}} onClick={() => test.deleteOneProduct(product.id)}></DeleteIcon></Td>
                                     </tr>
 )})}
-                                    <tr><td>{test.productos.length === 0 ? <p>Carrito Vacio</p> : <button onClick={(e) =>{
+                                    <tr><td>{test.productos.length === 0 ? <p>Carrito Vacio</p> : <button className="nav-subMenu nav-links" onClick={(e) =>{
                                         e.preventDefault()
                                         swal({
                                             title: "¿Estas seguro de eliminar todos los productos?",
@@ -172,7 +172,7 @@ const Cart = () => {
                     </table>
                     <p className="promotion">*Envio gratis a partir de $6000</p>
                 </form>
-                {email == '' || phone == '' || input == '' ? <button disabled>Terminar compra</button> : <button onClick={() => createOrder()}>Terminar compra</button>}
+                {email == '' || phone == '' || input == '' ? <button className="nav-subMenu nav-links" disabled>Terminar compra</button> : <button className="nav-subMenu nav-links" onClick={() => createOrder()}>Terminar compra</button>}
                 </div>
                 
             </RowCart>
