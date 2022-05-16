@@ -1,10 +1,12 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Project React JS - CODER HOUSE
 
 Tienda online de Ropa.
+
+## Preview
+
+![Logo](https://media.giphy.com/media/cMO3J9Fl5qwK34Idoe/giphy.gif)
+
 
 ## Funcionalidades
 
