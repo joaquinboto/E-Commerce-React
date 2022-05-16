@@ -3,6 +3,11 @@
 
 Tienda online de Ropa.
 
+## Preview
+
+![Logo](https://media.giphy.com/media/cMO3J9Fl5qwK34Idoe/giphy.gif)
+
+
 ## Funcionalidades
 
 - Menú con las secciones shop y carrito.
