@@ -20,7 +20,8 @@ const Cart = () => {
             id: producto.id,
             title: producto.nombre,
             price: producto.precio,
-            quantity: producto.cantidad,}))
+            quantity: producto.cantidad,
+        }))
         
         let order = {
             buyer :{
@@ -30,7 +31,7 @@ const Cart = () => {
             date: serverTimestamp(),
             item: itemsCopy,
             total: test.updateTotal()
-    }
+            }
     
     
     test.productos.forEach(async (item) => {
@@ -42,8 +43,13 @@ const Cart = () => {
 
     const createOrderInFirestore = async () => {
         const or = doc(collection(db, "orders"));
-        await setDoc(or, order);
-        return or;
+        if (test.productos.length == 0) {
+            swal("No hay productos en el carrito", "", "error")
+        } else {
+            await setDoc(or, order)
+            return or;
+        }
+       
       }
 
     createOrderInFirestore()
