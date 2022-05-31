@@ -43,7 +43,7 @@ const Cart = () => {
 
     const createOrderInFirestore = async () => {
         const or = doc(collection(db, "orders"));
-        if (test.productos.length == 0) {
+        if (test.productos.length === 0) {
             swal("No hay productos en el carrito", "", "error")
         } else {
             await setDoc(or, order)
@@ -172,7 +172,7 @@ const Cart = () => {
                     </table>
                     <p className="promotion">*Envio gratis a partir de $6000</p>
                 </form>
-                {email == '' || phone == '' || input == '' ? <button className="nav-subMenu nav-links" disabled>Terminar compra</button> : <button className="nav-subMenu nav-links" onClick={() => createOrder()}>Terminar compra</button>}
+                {email === '' || phone === '' || input === '' ? <button className="nav-subMenu nav-links" disabled>Terminar compra</button> : <button className="nav-subMenu nav-links" onClick={() => createOrder()}>Terminar compra</button>}
                 </div>
                 
             </RowCart>
